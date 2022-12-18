@@ -1,17 +1,10 @@
+/*
+  GestureDetector 181. Satır
+*/  
+
+
 import 'package:flutter/material.dart';
-import 'package:hentaiturk/fonc/auth.dart';
-import 'package:hentaiturk/fonc/emailMessage.dart';
-import 'package:hentaiturk/pages/mainpage.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:hentaiturk/pages/alertpages.dart';
-import 'package:hentaiturk/pages/registerpage.dart';
-import 'package:hentaiturk/pages/signin.dart';
-import 'package:hentaiturk/pages/userprofilepage.dart';
-import 'package:hentaiturk/pages/verifypage.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:hentaiturk/pages/verifypage.dart';
+
 
 class registerpages extends StatefulWidget {
   @override
@@ -81,8 +74,6 @@ class _registerpages extends State<registerpages> {
         leading: IconButton(
             splashRadius: 30,
             onPressed: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => hentaimainpage()));
             },
             icon: Icon(Icons.arrow_back)),
       ),
@@ -239,27 +230,8 @@ class _registerpages extends State<registerpages> {
                         color: Color.fromARGB(160, 250, 100, 255),
                       ),
                     ),
-                    onPressed: () async {
-                      if (validateStructure(password) &&
-                          validateStructureEmail(email) &&
-                          validateStructureUsername(username)) {
-                        try {
-                          var codevalue = randomNumber();
-                          var adress = email;
-                          await sendEmail(name: username, email: adress, message: codevalue);
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => verifyPages(
-                                code: codevalue,
-                                mail: adress,
-                                password: password,
-                              )));
-                          //await createUserEmailAndPassword(email, password);
-                        } catch (e) {
-                          print(e);
-                        }
-                      } else {
-                        print("Yanlıs değer");
-                      }
+                    onPressed: () {
+      
                     },
                   ),
                 ),
