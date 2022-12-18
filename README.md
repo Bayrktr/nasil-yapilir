@@ -1,1 +1,1 @@
-# nasil_yapilir
+-genc_developer hesabımdaki 'Nasıl Yapılır ?' serisinin açık kaynak kodları
